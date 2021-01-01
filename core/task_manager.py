@@ -1,7 +1,7 @@
 from typing import List
 from datetime import date
-from task_model import Task, TaskModel
-import database
+from core import Task, TaskModel
+from database import database
 
 
 def is_date_today(date_to_check: str):

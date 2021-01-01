@@ -1,8 +1,7 @@
 import argparse
 from typing import List
 
-from task_model import TaskModel
-from task_manager import TaskManager
+from core import TaskModel, TaskManager
 
 
 def main():

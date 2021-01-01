@@ -1,7 +1,7 @@
 from typing import List
 from tinydb import TinyDB, Query
 
-db = TinyDB('db.json')
+db = TinyDB('database/db.json')
 
 
 def add(m: dict):
