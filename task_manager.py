@@ -17,10 +17,10 @@ class TaskManager:
         database.add(d)
 
     @staticmethod
-    def update(task_model: TaskModel, hash_value: str):
-        task = Task(task_model.name, task_model.deadline, task_model.description)
-        task_model.hash = task.hash_value
-        database.update(task_model, hash_value)
+    def update(new_task_model: TaskModel, hash_value_from_old_model: str):
+        task = Task(new_task_model.name, new_task_model.deadline, new_task_model.description)
+        new_task_model.hash = task.hash_value
+        database.update(new_task_model, hash_value_from_old_model)
 
     @staticmethod
     def list(task_filter: str) -> List[dict]:

@@ -1,4 +1,6 @@
 import argparse
+from typing import List
+
 from task import TaskModel
 from task_manager import TaskManager
 
@@ -18,7 +20,7 @@ def execute_command(args):
         TaskManager.update(task_model, args.task_hash)
     elif option == "list":
         tasks = TaskManager.list(args.filter)
-        print(tasks)
+        print_tasks_in_nice_format(tasks)
     elif option == "remove":
         TaskManager.remove(args.task_hash)
 
@@ -33,6 +35,11 @@ def parse_arguments():
     parser.add_argument('--task_hash', type=int)
     args = parser.parse_args()
     return args
+
+
+def print_tasks_in_nice_format(tasks: List[dict]):
+    # just kidding
+    print(tasks)
 
 
 if __name__ == "__main__":
