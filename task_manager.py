@@ -1,6 +1,6 @@
 from typing import List
 from datetime import date
-from task import Task, TaskModel
+from task_model import Task, TaskModel
 import database
 
 
