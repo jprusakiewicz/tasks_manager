@@ -4,7 +4,7 @@ from core import Task, TaskModel
 from database import database
 
 
-def is_date_today(date_to_check: str):
+def is_date_today(date_to_check: str) -> bool:
     return date.fromisoformat(date_to_check) == date.today()
 
 
@@ -17,7 +17,7 @@ class TaskManager:
         database.add(d)
 
     @staticmethod
-    def update(new_task_model: TaskModel, hash_value_from_old_model: str):
+    def update(new_task_model: TaskModel, hash_value_from_old_model: int):
         task = Task(new_task_model.name, new_task_model.deadline, new_task_model.description)
         new_task_model.hash = task.hash_value
         database.update(new_task_model, hash_value_from_old_model)

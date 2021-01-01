@@ -9,7 +9,7 @@ def main():
     execute_command(args)
 
 
-def execute_command(args):
+def execute_command(args: argparse.Namespace):
     option = args.option.lower()
     if option == "add":
         task_model = TaskModel(name=args.name, deadline=args.deadline, description=args.description)
